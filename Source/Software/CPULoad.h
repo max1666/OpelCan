@@ -1,29 +1,30 @@
 /*-- File description -------------------------------------------------------*/
 /**
-*   @file:    main.h
+*   @file:    CPULoad.h
 *
 *   @author:  valeriy.williams.
 *   @company: Lab.
 */
 
-#ifndef __MAIN_H
-#define __MAIN_H
-/*-- Standard C/C++ Libraries -----------------------------------------------*/
+#ifndef CPU_LOAD_H
+#define CPU_LOAD_H
+/*-- Standart C/C++ Libraries -----------------------------------------------*/
+#include <stdint.h>
+
 /*-- Other libraries --------------------------------------------------------*/
 /*-- Hardware specific libraries --------------------------------------------*/
 /*-- Project specific includes ----------------------------------------------*/
 /*-- Exported macro ---------------------------------------------------------*/
-/*-- Typedefs ---------------------------------------------------------------*/
-typedef enum
-{
-	APP_STATE__START,
-	APP_STATE__WAIT_START,
-	APP_STATE__INIT,
-	APP_STATE__WAIT_INIT,
-	APP_STATE__WORK
-} AppState_t;
-/*-- Exported variables -----------------------------------------------------*/
-/*-- Exported functions -----------------------------------------------------*/
+#define CPU_LOAD_0_TICKS                83500
 
-#endif // __MAIN_H
+/*-- Typedefs ---------------------------------------------------------------*/
+/*-- Exported functions -----------------------------------------------------*/
+static void CPULoad_Calculate(void);
+void CPULoad_Init(void);
+float CPULoad_Read(void);
+
+void CPULoad_Tick_ms(uint32_t ms);
+void CPULoad_Tick_Main(void);
+
+#endif // CPU_LOAD_H
 /*-- EOF --------------------------------------------------------------------*/

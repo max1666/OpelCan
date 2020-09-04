@@ -1,29 +1,26 @@
 /*-- File description -------------------------------------------------------*/
 /**
-*   @file:    main.h
+*   @file:    HS_Can.h
 *
 *   @author:  valeriy.williams.
 *   @company: Lab.
 */
 
-#ifndef __MAIN_H
-#define __MAIN_H
-/*-- Standard C/C++ Libraries -----------------------------------------------*/
+#ifndef HS_CAN_H
+#define HS_CAN_H
+/*-- Standart C/C++ Libraries -----------------------------------------------*/
+#include <stdint.h>
+
 /*-- Other libraries --------------------------------------------------------*/
 /*-- Hardware specific libraries --------------------------------------------*/
+#include "stm32f10x_can.h"
+
 /*-- Project specific includes ----------------------------------------------*/
 /*-- Exported macro ---------------------------------------------------------*/
 /*-- Typedefs ---------------------------------------------------------------*/
-typedef enum
-{
-	APP_STATE__START,
-	APP_STATE__WAIT_START,
-	APP_STATE__INIT,
-	APP_STATE__WAIT_INIT,
-	APP_STATE__WORK
-} AppState_t;
-/*-- Exported variables -----------------------------------------------------*/
 /*-- Exported functions -----------------------------------------------------*/
+void HS_CAN__ReceiveMessage(CanRxMsg *message);
+void HS_CAN__Run(void);
 
-#endif // __MAIN_H
+#endif // LS_CAN_H
 /*-- EOF --------------------------------------------------------------------*/

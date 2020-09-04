@@ -1,29 +1,27 @@
 /*-- File description -------------------------------------------------------*/
 /**
-*   @file:    main.h
+*   @file:    usb_vcp.h
 *
 *   @author:  valeriy.williams.
 *   @company: Lab.
 */
 
-#ifndef __MAIN_H
-#define __MAIN_H
+#ifndef _USB_VCP_H
+#define _USB_VCP_H
 /*-- Standard C/C++ Libraries -----------------------------------------------*/
+#include <stdint.h>
+
 /*-- Other libraries --------------------------------------------------------*/
 /*-- Hardware specific libraries --------------------------------------------*/
 /*-- Project specific includes ----------------------------------------------*/
 /*-- Exported macro ---------------------------------------------------------*/
 /*-- Typedefs ---------------------------------------------------------------*/
-typedef enum
-{
-	APP_STATE__START,
-	APP_STATE__WAIT_START,
-	APP_STATE__INIT,
-	APP_STATE__WAIT_INIT,
-	APP_STATE__WORK
-} AppState_t;
 /*-- Exported variables -----------------------------------------------------*/
 /*-- Exported functions -----------------------------------------------------*/
+void VCP_Send(uint8_t *buffer, uint32_t length);
 
-#endif // __MAIN_H
+void VCP_DataSendedCallback(void);
+void VCP_DataReceivedCallback(uint8_t *buffer, uint32_t length);
+
+#endif // _USB_VCP_H
 /*-- EOF --------------------------------------------------------------------*/

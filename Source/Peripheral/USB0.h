@@ -1,29 +1,25 @@
 /*-- File description -------------------------------------------------------*/
 /**
-*   @file:    main.h
+*   @file:    USB0.h
 *
 *   @author:  valeriy.williams.
 *   @company: Lab.
 */
 
-#ifndef __MAIN_H
-#define __MAIN_H
+#ifndef _USB_0_H
+#define _USB_0_H
 /*-- Standard C/C++ Libraries -----------------------------------------------*/
 /*-- Other libraries --------------------------------------------------------*/
 /*-- Hardware specific libraries --------------------------------------------*/
 /*-- Project specific includes ----------------------------------------------*/
 /*-- Exported macro ---------------------------------------------------------*/
 /*-- Typedefs ---------------------------------------------------------------*/
-typedef enum
-{
-	APP_STATE__START,
-	APP_STATE__WAIT_START,
-	APP_STATE__INIT,
-	APP_STATE__WAIT_INIT,
-	APP_STATE__WORK
-} AppState_t;
 /*-- Exported variables -----------------------------------------------------*/
 /*-- Exported functions -----------------------------------------------------*/
+void USB0_Init(void);
+void USB0_DeInit(void);
 
-#endif // __MAIN_H
+void USB0_InterruptHandler(void);
+
+#endif // _USB_0_H
 /*-- EOF --------------------------------------------------------------------*/

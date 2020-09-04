@@ -1,29 +1,30 @@
 /*-- File description -------------------------------------------------------*/
 /**
-*   @file:    main.h
+*   @file:    CanHacker.h
 *
 *   @author:  valeriy.williams.
 *   @company: Lab.
 */
 
-#ifndef __MAIN_H
-#define __MAIN_H
-/*-- Standard C/C++ Libraries -----------------------------------------------*/
+#ifndef CAN_HACKER_H
+#define CAN_HACKER_H
+/*-- Standart C/C++ Libraries -----------------------------------------------*/
+#include <stdint.h>
+
 /*-- Other libraries --------------------------------------------------------*/
 /*-- Hardware specific libraries --------------------------------------------*/
+#include "stm32f10x_can.h"
+
 /*-- Project specific includes ----------------------------------------------*/
 /*-- Exported macro ---------------------------------------------------------*/
 /*-- Typedefs ---------------------------------------------------------------*/
-typedef enum
-{
-	APP_STATE__START,
-	APP_STATE__WAIT_START,
-	APP_STATE__INIT,
-	APP_STATE__WAIT_INIT,
-	APP_STATE__WORK
-} AppState_t;
-/*-- Exported variables -----------------------------------------------------*/
 /*-- Exported functions -----------------------------------------------------*/
+void CanHacker_Init(void);
 
-#endif // __MAIN_H
+void CanHacker_ReceiveCanMessage(CanRxMsg *message);
+
+
+void CanHacker_Run(void);
+
+#endif // CAN_HACKER_H
 /*-- EOF --------------------------------------------------------------------*/

@@ -1,29 +1,23 @@
 /*-- File description -------------------------------------------------------*/
 /**
-*   @file:    main.h
+*   @file:    debug_common.h
 *
 *   @author:  valeriy.williams.
 *   @company: Lab.
 */
 
-#ifndef __MAIN_H
-#define __MAIN_H
+#ifndef _DEBUG_COMMON_H_
+#define _DEBUG_COMMON_H_
 /*-- Standard C/C++ Libraries -----------------------------------------------*/
+#include <stdint.h>
 /*-- Other libraries --------------------------------------------------------*/
 /*-- Hardware specific libraries --------------------------------------------*/
 /*-- Project specific includes ----------------------------------------------*/
 /*-- Exported macro ---------------------------------------------------------*/
 /*-- Typedefs ---------------------------------------------------------------*/
-typedef enum
-{
-	APP_STATE__START,
-	APP_STATE__WAIT_START,
-	APP_STATE__INIT,
-	APP_STATE__WAIT_INIT,
-	APP_STATE__WORK
-} AppState_t;
 /*-- Exported variables -----------------------------------------------------*/
 /*-- Exported functions -----------------------------------------------------*/
+void Debug_ByteArrived(uint8_t byte);
 
-#endif // __MAIN_H
+#endif // _DEBUG_COMMON_H_
 /*-- EOF --------------------------------------------------------------------*/

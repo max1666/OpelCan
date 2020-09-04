@@ -1,29 +1,27 @@
 /*-- File description -------------------------------------------------------*/
 /**
-*   @file:    main.h
+*   @file:    bus_worker.h
 *
 *   @author:  valeriy.williams.
 *   @company: Lab.
 */
 
-#ifndef __MAIN_H
-#define __MAIN_H
-/*-- Standard C/C++ Libraries -----------------------------------------------*/
+#ifndef BUS_WORKER_H
+#define BUS_WORKER_H
+/*-- Standart C/C++ Libraries -----------------------------------------------*/
+#include <stdint.h>
+
 /*-- Other libraries --------------------------------------------------------*/
 /*-- Hardware specific libraries --------------------------------------------*/
+#include "stm32f10x_can.h"
+
 /*-- Project specific includes ----------------------------------------------*/
 /*-- Exported macro ---------------------------------------------------------*/
 /*-- Typedefs ---------------------------------------------------------------*/
-typedef enum
-{
-	APP_STATE__START,
-	APP_STATE__WAIT_START,
-	APP_STATE__INIT,
-	APP_STATE__WAIT_INIT,
-	APP_STATE__WORK
-} AppState_t;
-/*-- Exported variables -----------------------------------------------------*/
 /*-- Exported functions -----------------------------------------------------*/
+void CanBus_ReceiveMessage(CanRxMsg *message);
 
-#endif // __MAIN_H
+void CanBus_Run(void);
+
+#endif // BUS_WORKER_H
 /*-- EOF --------------------------------------------------------------------*/
